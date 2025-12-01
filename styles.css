@@ -6,12 +6,16 @@ h1, h2, h3, h4, h5, h6, p, ul {
     margin: 0;
     padding: 0;
 }
+/* 1) Box model: hesaplama/taşma sorunlarını çözmek için */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 
 body {
     /* C5, C6, C7: Font ailesi ayarı */
     font-family: 'Roboto', sans-serif; 
-    
+    margin: 0;
     /* C8, C11: Baskın metin rengi ve arka plan rengi */
     color: #434455; 
     background-color: #ffffff;
@@ -32,8 +36,6 @@ body {
     text-decoration: none;
 }
 
-,
-
 /* Tüm img etiketlerinin doğru görüntülenmesi için */
 .image {
     display: block;
@@ -43,7 +45,8 @@ body {
 
 /* Sayfa içeriğini ortalamak ve genişliğini sınırlamak için container */
 .container {
-    width: 1158px; 
+    max-width: 1158px;   /* sabit maksimum genişlik */
+    width: 100%;         /* iç konteynerin yüzde tabanlı davranması için */
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -170,7 +173,7 @@ body {
 
 .hero {
  background-color: #2e2f42; 
-    padding: 120px 0; 
+    padding: 188px 0; 
     text-align: center;
 }
 
@@ -322,9 +325,10 @@ body {
 .portfolio-list {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 24px; /* Sütunlar arası boşluk */
-    /* row-gap: 48px; (Bu zaten sadece alt satırda geçerli olacak) */
-}
+    column-gap: 24px; 
+    row-gap: 48px;
+    margin: 0;
+    padding: 0;  }
 
 /* İKİ SATIR ARASINA BOŞLUK EKLEME */
 .portfolio-row-1 {
