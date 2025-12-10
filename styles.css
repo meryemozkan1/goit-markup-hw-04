@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   box-sizing: border-box;
 }
 
-/* C6, C7: Ortak Geçiş Ayarları */
+/* D6: Ortak Geçiş Ayarları */
 :root {
     --primary-text-color: #434455;
     --title-text-color: #2e2f42;
@@ -21,6 +21,8 @@ h1, h2, h3, h4, h5, h6, p, ul {
     --light-background-color: #f4f4fd;
     --dark-background-color: #2e2f42;
     --pressed-color: #404bbf;
+    --success-color: #31d0aa; /* Footer sosyal medya hover için */
+    /* D6: Geçiş süresi ve zaman dağıtım fonksiyonu */
     --transition-duration: 250ms;
     --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -54,8 +56,8 @@ body {
 
 /* Sayfa içeriğini ortalamak ve genişliğini sınırlamak için container */
 .container {
-    max-width: 1158px;   /* sabit maksimum genişlik */
-    width: 100%;         /* iç konteynerin yüzde tabanlı davranması için */
+    max-width: 1158px; 
+    width: 100%; 
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -110,7 +112,6 @@ body {
     margin-right: auto;
 }
 
-
 /* Logo Stilleri */
 .logo {
     font-family: 'Raleway', sans-serif;
@@ -134,7 +135,7 @@ body {
 }
 
 .site-nav-link {
-    position: relative; /* C8 için gereklidir */
+    position: relative; 
     display: block;
     padding: 24px 0;
 
@@ -144,20 +145,19 @@ body {
     letter-spacing: 0.02em;
     color: var(--title-text-color);
 
-    /* C6, C7: Renk değişimi için geçiş */
+    /* D6: Renk değişimi için geçiş */
     transition: color var(--transition-duration) var(--transition-timing-function);
 }
 
-/* C8: Geçerli sayfanın altını çizme */
+/* Geçerli sayfanın altını çizme */
 .site-nav-link.current {
     color: var(--pressed-color);
 }
 
 .site-nav-link.current::after {
-    /* C11: Sadece dekoratif amaçlı boş içerik */
     content: "";
     position: absolute;
-    bottom: -1px; /* 1px border-bottom kalınlığı */
+    bottom: -1px; 
     left: 0;
     width: 100%;
     height: 4px;
@@ -173,7 +173,7 @@ body {
 
 /* İletişim Bilgileri (Auth Nav) */
 .auth-nav {
-    font-style: normal; /* address etiketi için */
+    font-style: normal; 
 }
 .auth-nav-list {
     display: flex;
@@ -190,7 +190,7 @@ body {
 
     color: var(--primary-text-color);
 
-    /* C6, C7: Renk değişimi için geçiş */
+    /* D6: Renk değişimi için geçiş */
     transition: color var(--transition-duration) var(--transition-timing-function);
 }
 
@@ -205,13 +205,12 @@ body {
 /* ------------------------------------- */
 
 .hero {
-    /* C1: Arka plan resmi, degrade ve solma efekti */
     /* Resmin 1440px'i geçmemesi için max-width, centerlama ve diğer özellikler ayarlanabilir */
     background-color: var(--dark-background-color);
     padding: 188px 0;
     text-align: center;
-    max-width: 1440px; /* C2: Resmin maksimum genişliği */
-    margin: 0 auto; /* C2: Ortalamak için */
+    max-width: 1440px; 
+    margin: 0 auto; 
    /* ARKA PLAN RESMİ VE EFEKTLERİN UYGULANMASI */
     background-image: 
         /* Degrade / Solma Efekti (Çok katmanlı tasarım) */
@@ -253,7 +252,7 @@ body {
     background-color: var(--accent-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-    /* C6, C7: Arka plan rengi değişimi için geçiş */
+    /* D6: Arka plan rengi değişimi için geçiş */
     transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
 
@@ -285,7 +284,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 112px;
-    background-color: #f4f4fd;
+    background-color: var(--light-background-color);
     border-radius: 4px;
     margin-bottom: 8px;
 }
@@ -300,16 +299,16 @@ body {
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    color: #2e2f42;
+    color: var(--title-text-color);
     margin-bottom: 8px;
-   width: 264px;
+    width: 264px;
 }
 
 .features-text {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #434455;
+    color: var(--primary-text-color);
     width: 264px;
     max-width: 264px;
 }
@@ -330,7 +329,7 @@ body {
     gap: 24px;
 }
 
-/* C3: Kartların kalıcı gölge efekti */
+/* Kartların kalıcı gölge efekti */
 .team-member-card {
     width: calc((100% - 3 * 24px) / 4);
     background-color: var(--white-color);
@@ -344,7 +343,7 @@ body {
 
 /* Ekip Üyesi İçerik Alanı */
 .team-content {
-    padding: 32px 0; /* Alttaki sosyal medya linkleri için 0 padding ile listeyi daha iyi ortalar */
+    padding: 32px 0; 
 }
 
 .team-member-name {
@@ -361,7 +360,7 @@ body {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--primary-text-color);
-    margin-bottom: 8px; /* Sosyal medya ikonları için boşluk */
+    margin-bottom: 8px; 
 }
 
 /* Sosyal Medya Linkleri Listesi (Takım) */
@@ -384,11 +383,11 @@ body {
     height: 100%;
     background-color: var(--accent-color);
     border-radius: 50%;
-    /* C6, C7: Arka plan rengi değişimi için geçiş */
+    /* D6: Arka plan rengi değişimi için geçiş */
     transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
 
-/* C5: Sosyal medya linkleri Hover/Focus */
+/* Sosyal medya linkleri Hover/Focus */
 .social-links-link:hover,
 .social-links-link:focus {
     background-color: var(--pressed-color);
@@ -412,11 +411,11 @@ body {
 
 .portfolio-item {
     width: calc((100% - 48px) / 3);
-    /* C6, C7: Gölge efekti için geçiş */
+    /* D6: Gölge efekti için geçiş */
     transition: box-shadow var(--transition-duration) var(--transition-timing-function);
 }
 
-/* C4: Kart Hover/Focus için gölge efekti */
+/* Kart Hover/Focus için gölge efekti */
 .portfolio-item:hover,
 .portfolio-item:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
@@ -424,10 +423,10 @@ body {
                 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-/* C9, C10: Kaplama (Overlay) için sarıcı */
+/* Kaplama (Overlay) için sarıcı */
 .portfolio-image-box {
     position: relative;
-    overflow: hidden; /* Kaplamanın başlangıçta gizlenmesi için */
+    overflow: hidden; 
 }
 
 .portfolio-overlay {
@@ -436,18 +435,18 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--accent-color); /* Mavi kaplama */
+    background-color: var(--accent-color); 
     color: var(--light-background-color);
     padding: 40px 32px;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    transform: translateY(100%); /* Başlangıçta alt kısma itilir (C10) */
-    /* C6, C7: Kaplama animasyonu için geçiş */
+    transform: translateY(100%); 
+    /* D6: Kaplama animasyonu için geçiş */
     transition: transform var(--transition-duration) var(--transition-timing-function);
 }
 
-/* C9: Hover durumunda kaplamanın görünür olması */
+/* Hover durumunda kaplamanın görünür olması */
 .portfolio-item:hover .portfolio-overlay {
     transform: translateY(0%);
 }
@@ -485,12 +484,12 @@ body {
 .footer-container {
     display: flex;
     align-items: baseline;
-    gap: 0; /* Gap'i kaldırıp alt kutulara margin verilecek */
+    gap: 0; 
 }
 
 /* Logo ve Metin Bloğu */
 .footer-logo-box {
-    margin-right: 120px; /* Sosyal medya kutusundan boşluk */
+    margin-right: 120px; 
 }
 
 .footer-logo {
@@ -513,7 +512,7 @@ body {
 
 /* Altbilgi Sosyal Medya */
 .footer-social-box {
-    /* Başka bir kutu varsa onunla yan yana durması için flex-grow: 1; ayarı yapılabilir */
+    margin-right: auto; /* Bülten formu ile aradaki boşluğu sağlar */
 }
 
 .footer-social-text {
@@ -526,17 +525,370 @@ body {
 }
 
 .footer-social-links-list {
+    display: flex;
     gap: 16px;
 }
 
 .footer-social-link {
-    background-color: var(--accent-color);
-    /* C6, C7: Arka plan rengi değişimi için geçiş */
+    background-color: var(--accent-color); 
+    display: flex; /* Geri kalan stiller (ortalamak için) */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* D6: Arka plan rengi değişimi için geçiş */
     transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
 
-/* C5: Altbilgi sosyal medya linkleri Hover/Focus (Tasarımda belirtilen renk değişimi) */
+/* Altbilgi sosyal medya linkleri Hover/Focus */
 .footer-social-link:hover,
 .footer-social-link:focus {
-    background-color: #31d0aa; /* Tasarımda belirtilen ikincil vurgu rengi */
+    background-color: var(--pressed-color); /* #404bbf */
+}
+
+/* === 7.1 FOOTER NEWSLETTER STİLLERİ === */
+
+
+.newsletter-form {
+  display: flex;
+  gap: 24px; /* Tasarımda 24px boşluk var */
+  width: 100%;
+}
+
+.newsletter-input {
+  width: 264px;
+  height: 40px;
+  border: 1px solid var(--white-color); /* Çerçeve rengi beyaz */
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent; /* Arka plan şeffaf */
+  padding: 8px 16px;
+  font-size: 12px;
+  line-height: 2; /* 24px / 12px = 2 */
+  letter-spacing: 0.04em;
+  color: var(--white-color);
+  outline: none;
+  /* D6: Çerçeve ve renk geçişi */
+  transition: border-color var(--transition-duration) var(--transition-timing-function);
+}
+
+.newsletter-input::placeholder {
+  color: var(--white-color);
+}
+
+/* D3: Input Focus/Hover (Burada sadece border rengi) */
+.newsletter-input:focus {
+  border-color: var(--accent-color);
+}
+
+.newsletter-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 165px;
+  height: 40px;
+  padding: 8px 24px;
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  gap: 12px;
+  /* D6: Arka plan rengi geçişi */
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
+}
+
+.newsletter-submit:hover,
+.newsletter-submit:focus {
+    background-color: var(--pressed-color);
+}
+
+.newsletter-icon {
+    fill: currentColor; /* Buton metin rengini (beyaz) kullanır */
+    margin-left: 16px;
+}
+
+/* ------------------------------------- */
+/* 8. MODAL VE BACKDROP STİLLERİ */
+/* ------------------------------------- */
+
+/* B1, B2, B6, B7: Backdrop */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(46, 47, 66, 0.4);
+  /* B6: Gizleme mekanizması - başlangıçta gizli */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  /* D6: Geçiş efekti */
+  transition: opacity var(--transition-duration) var(--transition-timing-function),
+              visibility var(--transition-duration) var(--transition-timing-function);
+}
+
+/* B7: Açılma durumu */
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* B3, B4: Modal Pencere */
+.modal {
+  position: absolute; /* B4 için fixed yerine absolute (backdrop fixed olduğu için) */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* B4: Merkezleme */
+  
+  width: 100%;
+  max-width: 408px;
+  min-height: 584px;
+  padding: 24px; /* Kapatma butonu için 24px padding yeterli */
+  background: #fcfcfc; /* Tasarımda belirtilen renk */
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 
+              0px 1px 3px rgba(0, 0, 0, 0.12), 
+              0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  /* D6: Modal'ın transform geçişi */
+  transition: transform var(--transition-duration) var(--transition-timing-function);
+}
+
+/* B5: Kapatma Butonu */
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* D6: Geçiş efekti */
+  transition: background-color var(--transition-duration) var(--transition-timing-function),
+              border-color var(--transition-duration) var(--transition-timing-function);
+}
+
+.modal-close-icon {
+  fill: var(--title-text-color);
+  /* D6: Simge rengi geçişi */
+  transition: fill var(--transition-duration) var(--transition-timing-function);
+}
+
+/* B5: Kapatma Butonu Hover/Focus */
+.modal-close:hover,
+.modal-close:focus {
+  background-color: var(--pressed-color);
+  border-color: var(--pressed-color);
+}
+
+.modal-close:hover .modal-close-icon,
+.modal-close:focus .modal-close-icon {
+  fill: var(--white-color);
+}
+
+.modal-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.5; /* 1.5 (24px/16px) yerine 1.5 olarak ayarlandı */
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--title-text-color);
+  margin-bottom: 16px;
+}
+
+/* ------------------------------------- */
+/* 9. MODAL FORMU STİLLERİ (D2) */
+/* ------------------------------------- */
+
+.apply-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 8px; /* Genel form alanı boşluğu */
+}
+
+/* Son comment alanı için ekstra boşluk */
+.form-group-comment {
+  margin-bottom: 16px; 
+}
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  line-height: 1.17; /* 14px/12px = 1.166... */
+  letter-spacing: 0.04em;
+  color: var(--primary-text-color);
+  margin-bottom: 4px;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  padding: 8px 16px 8px 38px; /* Sol taraftan simge için 38px boşluk */
+  background-color: transparent;
+  outline: transparent; /* Vurguyu tamamen kaldırmak için */
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--title-text-color);
+  /* D6: Çerçeve geçişi */
+  transition: border-color var(--transition-duration) var(--transition-timing-function);
+}
+
+/* D3: Input Focus/Hover: Çerçeve rengi değişimi */
+.form-input:focus {
+  border-color: var(--accent-color);
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px; /* 16px soldan */
+  transform: translateY(-50%);
+  fill: var(--title-text-color); /* Varsayılan simge rengi */
+  /* D6: Simge rengi geçişi */
+  transition: fill var(--transition-duration) var(--transition-timing-function);
+}
+
+/* D3: Input Focus/Hover: Simge rengi değişimi */
+.form-input:focus + .input-icon {
+  fill: var(--accent-color);
+}
+
+/* Yorum Kutusu */
+.form-textarea {
+  width: 100%;
+  height: 120px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  padding: 8px 16px;
+  background-color: transparent;
+  resize: none;
+  outline: transparent;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--title-text-color);
+  /* D6: Çerçeve geçişi */
+  transition: border-color var(--transition-duration) var(--transition-timing-function);
+}
+
+.form-textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+
+/* D3: Textarea Focus/Hover: Çerçeve rengi değişimi */
+.form-textarea:focus {
+  border-color: var(--accent-color);
+}
+
+/* D4: Gizli Onay Kutusu */
+.visually-hidden-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox-group {
+    margin-bottom: 24px; /* Gönderme butonu ile aradaki boşluk */
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* D5: Özel Tasarım Onay Kutusu (Boş Kutu) */
+.custom-checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Küçülmesini engelle */
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  margin-right: 8px; /* Metin ile arasındaki boşluk */
+  background-color: var(--white-color);
+  fill: transparent; /* Tik işaretini başlangıçta gizler */
+  /* D6: Geçiş efekti */
+  transition: background-color var(--transition-duration) var(--transition-timing-function),
+              border-color var(--transition-duration) var(--transition-timing-function),
+              fill var(--transition-duration) var(--transition-timing-function);
+}
+
+/* D5: Seçildiğinde renk ve tik işareti */
+.visually-hidden-checkbox:checked + .checkbox-label .custom-checkbox {
+  background-color: var(--pressed-color);
+  border-color: var(--pressed-color);
+  fill: var(--light-background-color); /* Tik işaretini görünür yapar */
+}
+
+/* Metin stili */
+.checkbox-text {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--primary-text-color);
+}
+
+.privacy-link {
+  color: var(--accent-color); /* Mavi link rengi */
+  text-decoration: underline;
+  /* D6: Renk geçişi */
+  transition: color var(--transition-duration) var(--transition-timing-function);
+}
+
+.privacy-link:hover,
+.privacy-link:focus {
+    color: var(--pressed-color);
+}
+
+/* Gönderme Butonu */
+.submit-button {
+  display: block;
+  min-width: 165px;
+  height: 56px;
+  margin: 0 auto; /* Form içinde ortalama */
+  padding: 16px 32px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  /* D6: Arka plan rengi geçişi */
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
+}
+
+.submit-button:hover,
+.submit-button:focus {
+  background-color: var(--pressed-color);
 }
